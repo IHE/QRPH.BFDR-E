@@ -10,10 +10,26 @@
 ## 1:X.1 ToDo Actors, Transactions, and Content Modules
 
 * Actors
-  * [Client](#client)
-  * [Server](#server)
+  * [Content Creator](#ContentCreator)
+  * [Content Consumer](#ContentConsumer)
+  * [Data Consumer](#DataConsumer)
+  * [Data Responder](#DataResponder)
+  * [Form Receiver Document Exporter](#FormReceiverDocumentExporter)
+  * [Form Processor Document Exporter](#FormProcessorDocumentExporter)
+  * [Form Receiver Message Exporter](#FormReceiverMessageExporter)
+  * [Form Processor Message Exporter](#FormProcessorMessageExporter)
 * Transactions
-  * [do domain-Y](domain-YY.html)
+  * [BFDRQuery](QRPH-46.html)
+  * [Retrieve Form](ITI-34.html)
+  * [Submit Form](ITI-35.html)
+  * [Archive Form](ITI-36.html)
+  * [Mobile Retrieve form (Request)](QRPH-48.html)
+  * [Mobile Authorize Form](QRPH-50.html)
+  * [Mobile Populate Form (Request)](QRPH-52.html)
+  * [Mobile Retrieve Access Token (Request)](QRPH-51.html)
+  * [Mobile Retrieve Capability (Request)](QRPH-49.html)
+  * [BFDRFeed](QRPH-37.html)
+
 
 Actors and transactions are used to achieve this use-case...
 
@@ -25,9 +41,7 @@ Actors and transactions are used to achieve this use-case...
 
 This section defines the actors and transactions in this implementation guide.
 
-Figure below shows the actors directly
-involved in the ToDo 
-Profile and the relevant transactions between them.
+Figure below shows the actors directly involved in the Birth and Fetal Death Reporting-Enhanced Profile and the relevant transactions between them.
 
 <figure>
 {%include ActorsAndTransactions.svg%}
@@ -35,7 +49,7 @@ Profile and the relevant transactions between them.
 </figure>
 <br clear="all">
 
-<p id ="tXX.1-1" class="tableTitle">Table XX.1-1: Profile Acronym Profile - Actors and Transactions</p>
+<p id ="tXX.1-1" class="tableTitle">Table XX.1-1: BFDR-E Profile - Actors and Transactions</p>
 
 |         |               |                        |                 |                                   |
 |---------|---------------|------------------------|-----------------|-----------------------------------|
@@ -63,21 +77,70 @@ if Actor B supports XYZ Option, see Section XX.3.X.*
 ### XX.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
 
-<a name="client"> </a>
+<a name="ContentCreator"> </a>
 
-#### XX.1.1.1 Client
+#### XX.1.1.1 Content Creator
 
-The Client queries for blah meeting certain criteria and may retrieve selected blah.
+The Content Creator SHALL be able to create both a valid BFDR Provider Live Birth Composition Bundle and a valid BFDR Provider Fetal Death Composition Bundle.
 
-FHIR Capability Statement for [Client]{CapabilityStatement-IHE.ToDo.client.html}
+Detailed rules for the BFDR Provider Live Birth Composition Bundle are fully defined in [TODO](TODO), and detailed rules for the BFDR Provider Fetal Death Composition Bundle are fully
+defined in [TODO](TODO)
 
-<a name="server"> </a>
+<a name="ContentConsumer"> </a>
 
-#### XX.1.1.2 Server
+#### XX.1.1.2 Content Consumer
 
-The Sever processes query request from the Client actor.
+The Content Consumer SHALL consume both a valid BFDR Provider Live Birth Composition Bundle and a valid BFDR Provider Fetal Death Composition Bundle Detailed rules for the BFDR Provider Live Birth Composition Bundle are fully defined in [TODO](TODO), and detailed rules for the BFDR Provider Fetal Death Composition Bundle are fully defined in [TODO](TODO)
 
-FHIR Capability Statement for [Server](CapabilityStatement-IHE.ToDo.server.html)
+The Content Consumer SHALL implement the Discrete Data Import Option when consuming a QRPH IHE BFDR Provider Live Birth Document or IHE BFDR Provider Fetal Death Document.
+
+#### XX.1.1.3 Form Filler
+
+TBD
+
+
+
+#### XX.1.1.4 Form Manager
+
+TBD
+
+#### XX.1.1.5 Form Receiver
+
+TBD
+
+#### XX.1.1.6 Form Processor
+
+TBD
+
+#### XX.1.1.7 Form Receiver Document Exporter
+
+TBD
+
+#### XX.1.1.8 Form Processor Document Exporter
+
+TBD
+
+#### XX.1.1.9 Form Receiver Message Exporter
+
+TBD
+
+#### XX.1.1.10 Form Processor Message Exporter
+
+TBD
+
+#### XX.1.1.11 Form Archiver
+
+TBD
+
+#### XX.1.1.12 Data Consumer
+
+TBD
+
+#### XX.1.1.13 Data Responder
+
+TBD
+
+
 
 ### Transaction Descriptions
 
@@ -98,331 +161,164 @@ between options when applicable are specified in notes.
 
 <p id ="tXX.1-1" class="tableTitle">Table XX.1-1: Actor Options</p>
 
-|         |             |
-|---------|-------------|
-| Actor   | Option Name |
-| Actor A | Option AB  |
-| Actor B | none |
+|                                  |             |
+|----------------------------------|-------------|
+| Actor                            | Option Name |
+| Content Creator                  | Antepartum Import  |
+| Content Consumer                 | View |
+|                                  | Document Import |
+|                                  | Discrete Data Import |
+| Form Filler                      | LDS Pre-Pop[Note 1](#Note1) |
+|                                  | LDS-VR Pre-Pop[Note 2](#Note2) |
+|                                  | Archive Form |
+| Form Manager                     | none |
+| Form Processor                   | none |
+| Form Receiver                    | none |
+| Form Receiver Document Exporter  | none |
+| Form Processor Document Exporter | none |
+| Form Receiver Message Exporter   | Provider Supplied Live Birth Reporting Option [Note 2](#Note2) |
+|                                  | Provider Supplied Mother’s Live Birth Information Option [Note 2](#Note2) |
+|                                  | Provider Supplied Facility’s Live Birth Information Option [Note 2](#Note2) |
+|                                  | Provider Supplied Fetal Death Reporting Option |
+|                                  | Fetal Death Facility's Information Option |
+|                                  | Fetal Death Mother's Information Option |
+|                                  | Jurisdiction Live Birth Reporting Option |
+|                                  | Jurisdiction Fetal Death Reporting Option |
+| Form Processor Message Exporter  | Provider Supplied Live Birth Reporting Option [Note 2](#Note2) |
+|                                  | Provider Supplied Mother’s Live Birth Information Option [Note 2](#Note2) |
+|                                  | Provider Supplied Facility’s Live Birth Information Option [Note 2](#Note2) |
+|                                  | Provider Supplied Fetal Death Reporting Option |
+|                                  | Fetal Death Facility's Information Option |
+|                                  | Fetal Death Mother's Information Option |
+|                                  | Jurisdiction Live Birth Reporting Option |
+|                                  | Jurisdiction Fetal Death Reporting Option |
+| Form Archiver                    | none |
+| Data Consumer                    | none |
+| Data Responder                   | none |
 {: .grid}
 
-### XX.2.1 AB Option
+<a name="Note1"> </a>
+Note 1: At least one of these options SHALL be supported.
+
+<a name="Note2"> </a>
+Note 2: At least one of these birth reporting options SHALL be supported
+
+### XX.2.1 LDS Pre-Pop Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.2 LDS-VR Pre-Pop Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.3 Archive Form Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.4 Antepartum Import Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.5 Provider Supplied Live Birth Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.6 Provider Supplied Mother's Live Birth Information Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.7 Provider Supplied Facility’s Live Birth Information Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.8 Provider Supplied Fetal Death Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.9 Fetal Death Facility's Information Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.10 Fetal Death Mother's Information Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.11 Jurisdiction Live Birth Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.12 Jurisdiction Fetal Death Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.13 Void Certificate Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.14 Coded Cause of Death Reporting Option
+
+**TODO: describe this option and the Volume 1 requirements for this option
+
+### XX.2.15 Coded Race/Ethnicity Reporting Option
 
 **TODO: describe this option and the Volume 1 requirements for this option
 
 <a name="required-groupings"> </a>
 
-## XX.3 ToDo Required Actor Groupings
+## XX.3 BFDR-E Required Actor Groupings
 
-*Describe any requirements for actors in this profile to be grouped
-with other actors.*
+TBD - Actor grouping of Content Creator with Antepartum Import Option to be groped with PCC APS Content Consumer with Discrete Data Import Option content binding reference [TODO](TODO)
 
-*This section specifies all REQUIRED Actor Groupings (although
-“required” sometimes allows for a selection of one of several). To
-SUGGEST other profile groupings or helpful references for other profiles
-to consider, use Section XX.6 Cross Profile Considerations. Use Section
-X.5 for security profile recommendations.*
-
-An actor from this profile (Column 1) shall implement all of the
-required transactions and/or content modules in this profile ***in
-addition to*** ***<u>all</u>*** of the requirements for the grouped
-actor (Column 2) (Column 3 in alternative 2).
-
-If this is a content profile, and actors from this profile are grouped
-with actors from a workflow or transport profile, the Reference column
-references any specifications for mapping data from the content module
-into data elements from the workflow or transport transactions.
-
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; this is designated by merging column
-one into a single cell spanning multiple potential grouped actors. Notes
-are used to highlight this situation.
-
-Section XX.5 describes some optional groupings that may be of interest
-for security considerations and Section XX.6 describes some optional
-groupings in other related profiles.
-
-Two alternatives for Table XX.3-1 are presented below.
-
-* If there are no required groupings for any actor in this profile,
-    use alternative 1 as a template.
-* If an actor in this profile (with no option), has a required
-    grouping, use alternative 1.
-* If any required grouping is associated with an actor/option
-    combination in this profile, use alternative 2.
-
-alternative 1 Table XX.3-1: Profile Name - Required Actor
-Groupings
-
-All actors from this profile should be listed in Column 1, even if
-none of the actors has a required groupings. If no required grouping
-exists, “None” should be indicated in Column 2. If an actor in a content
-profile is required to be grouped with an actor in a transport or
-workflow profile, it will be listed **with at least one** required
-grouping. Do not use “XD\*” as an actor name.
-
-In some cases, required groupings are defined as at least one of an
-enumerated set of possible actors; to designate this, create a row for
-each potential actor grouping and merge column one to form a single cell
-containing the profile actor which should be grouped with at least one
-of the actors in the spanned rows. In addition, a note should be
-included to explain the enumerated set. See example below showing
-Document Consumer needing to be grouped with at least one of XDS.b
-Document Consumer, XDR Document Recipient or XDM Portable Media
-Importer
-
-The author should pay special consideration to security profiles in
-this grouping section. Consideration should be given to Consistent Time
-(CT) Client, ATNA Secure Node or Secure Application, as well as other
-profiles. For the sake of clarity and completeness, even if this table
-begins to become long, a line should be added for each actor for each of
-the required grouping for security. Also see the ITI document titled
-‘Cookbook: Preparing the IHE Profile Security Section’ at
-<http://ihe.net/Technical_Frameworks/#IT> for a list of suggested IT and
-security groupings.
+Note 1: A Content Creator supporting the Antepartum Import Option SHALL be grouped with the APS Content Consumer780 with the Discrete Data Import Option for those attributes specified by the Antepartum Import Option; see QRPH TF-1:X.2.4.
 
 <p id ="tXX.3-1" class="tableTitle">Table XX.3-1: Actor Groupings</p>
 
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<thead>
-<tr class="header">
-<th>this Profile Acronym Actor</th>
-<th>Actor(s) to be grouped with</th>
-<th>Reference</th>
-<th>Content Bindings Reference</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Actor A</td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>e.g., ITI-TF-1: 7.1</em></p></td>
-<td>--</td>
-</tr>
-<tr class="even">
-<td>Actor B</td>
-<td>None</td>
-<td>--</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td><p>Actor C</p>
-<p><em>In this example, Actor C shall be grouped with all three actors listed in column 2</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor D <em>(See note 1)</em></p>
-<p><em>In this example, the note is used to indicate that the Actor D shall be grouped with one or more of the two actors of the two actors in column 2.</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym/Actor</em></p></td>
-<td>--</td>
-<td>See Note 1</td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>In rare cases, the actor to be grouped with must implement an option. An example is in column 2.)</em></p></td>
-<td><p><em>external Domain Acronym or blank</em></p>
-<p><em>profile acronym Actor</em></p>
-<p><em>e.g., ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 17.3.11)</em></p></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><em>e.g., Content Consumer (See Note 1)</em></td>
-<td><em>ITI XDS.b / Document Consumer</em></td>
-<td><em>ITI TF-1: 10.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><em>ITI XDR / Document Recipient</em></td>
-<td><em>ITI TF-1: 15.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><em>ITI XDM / Portable Media Importer</em></td>
-<td><em>ITI TF-1: 16.1</em></td>
-<td><em>PCC TF-2:4.1 (See Note 2)</em></td>
-</tr>
-<tr class="even">
-<td><em>e.g., Content Consumer</em></td>
-<td><em>ITI CT / Time Client</em></td>
-<td><em>ITI TF-1: 7.1</em></td>
-<td>--</td>
-</tr>
-</tbody>
-</table>
-
-Note 1: *This is a short note. It may be used to describe situations
-where an actor from this profile may be grouped with one of several
-other profiles/actors.*
-
-Note 2: *A note could also be used to explain why the grouping is
-required, if that is still not clear from the text above.*
-
-alternative 2 Table XX.3-1: this Profile Acronym Profile
-
-* Required Actor Groupings
-
-All actors from this profile should be listed in Column 1. If no
-required grouping exists, “None” should be indicated in Column 3.
-
-Guidance on using the “Grouping Condition” column:
-
-* If an actor has no required grouping, Column 2 should contain “--“.
-    See Actor A below.
-* If an actor has a required grouping that is not associated with a
-    profile option (i.e., it has no condition), column 2 should contain
-    “Required”. See Actor B below.
-* Sometimes an option requires that an actor in this profile be
-    grouped with an actor in another profile. That condition is
-    specified in Column 2. See Actor C below.
-
-<p id ="tXX.3-1" class="tableTitle">Table XX.3-1: Actor Groupings</p>
-
-<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
-<tbody>
-<tr class="odd">
-<td>this Profile Acronym Actor</td>
-<td>Grouping Condition</td>
-<td>Actor(s) to be grouped with</td>
-<td>Reference</td>
-</tr>
-<tr class="even">
-<td>Actor A</td>
-<td>--</td>
-<td>None</td>
-<td>--</td>
-</tr>
-<tr class="odd">
-<td>Actor B</td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em></p>
-<p><em>e.g., ITI CT / Time Client</em></p></td>
-<td><p><em>TF Reference; typically from Vol 1</em></p>
-<p><em>(e.g., ITI TF-1: 7.1)</em></p></td>
-</tr>
-<tr class="even">
-<td>Actor C</td>
-<td>With the <em>Option name in this profile</em> Option</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>Where the Option is defined in this profile Section XX.3 z</em></td>
-</tr>
-<tr class="odd">
-<td><p>Actor D</p>
-<p><em>if an actor has both required and conditional groupings, list the Required grouping first</em></p></td>
-<td>Required</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>If the <em>Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>If the <em>other Option name in this profile</em> Option is supported.</td>
-<td><em>external Domain Acronym or blank profile acronym/Actor</em></td>
-<td><em>TF Reference; typically from Vol 1</em></td>
-</tr>
-<tr class="even">
-<td><p>Actor E</p>
-<p><em>(In rare cases, the actor to be grouped with must implement an option, an example is in column 3)</em></p></td>
-<td>Required</td>
-<td><p><em>external Domain Acronym or blank profile acronym/Actor</em> with the <em>option name</em></p>
-<p><em>e.g. ITI RFD Form Filler with the Archive Form Option</em></p></td>
-<td><p><em>TF Reference to the Option definition; typically from Vol 1</em></p>
-<p><em>(eg ITI TF-1:17.3.11)</em></p></td>
-</tr>
-</tbody>
-</table>
 
 <a name="overview"> </a>
 
-## XX.4 ToDo Overview
+## XX.4 BFDR-E Overview
 
-This section shows how the transactions/content modules of the profile
-are combined to address the use cases.
+Vital Records birth certificates and fetal death reports include important demographic, medical and key information about the antepartum period, the labor and delivery process and the
+newborn/fetal death. Much of the medical and health information collected for the birth certificate and fetal death report can be pre-populated with information already available in the
+Electronic Health Record (EMR). A responsible Health Care Provider (HCP) or designated representative must review and complete the information to ensure data quality for vital registration purposes. These data may then be used by public health agencies to track maternal and infant health to target interventions for at risk populations.
 
-Use cases are informative, not normative, and “SHALL” language is
-not allowed in use cases.
+The national statistics agencies have a long and enduring history that serves to provide essential data on births and deaths. Within the United States, for instance, this is the oldest and most successful example of inter-governmental data sharing in Public Health. Currently, these data typically are gathered by hospital personnel from the hospital’s medical records using paper worksheets. The process of capturing Vital Records information manually is duplicative, labor-intensive, costly, and can be error prone. As a result, the timeliness and quality of these data are adversely affected.
 
 ### XX.4.1 Concepts
 
-If needed, this section provides an overview of the concepts that
-provide necessary background for understanding the profile. If not
-needed, state “Not applicable.” For an example of why/how this section
-may be needed, please see ITI Cross Enterprise Workflow (XDW).
+Some jurisdictions have established detailed specifications for collecting and reporting the items on the Certificate of Live Birth and the Report of Fetal Death. It is critical that all vital registration areas follow these standards to promote uniformity in data collection across registration areas. 
 
-It may be useful in this section but is not necessary, to provide a
-short list of the use cases described below and explain why they are
-different.
+Additionally, standard worksheets are used to enhance the collection of quality, reliable data. Forms for the “mother’s live birth information for Child’s Birth Certificate” have been
+established by some jurisdictions to identify information to be collected directly from the mother. The “Facility Worksheet for the Live Birth Certificate” identifies information for which the best sources are the mother’s and infant’s medical records. The use of separate worksheets promotes standardized collection. The "Patient's Worksheet for the Report of Fetal Death" and the "Facility Worksheet for the Report of Fetal Death" have also been established for the purpose of reporting fetal death information.
+
+The hospital is responsible for completing the Record of Live Birth in the jurisdiction's Electronic Birth Registration System (EBRS). Information collected from the mother on the mother’s live birth information must be data entered into the EBRS. Facility Worksheet data transmitted electronically into the EBRS from the EMR must be reviewed for completeness and accuracy. The birth records specialist plays an essential role in gathering the information and ensuring that all information is complete before transmission to the vital registration system at the states/jurisdictional vital record offices. Select birth data may be transmitted later to public health authorities as allowed by individual state statute and other vital records stakeholders.
+
+Example Forms:
+    *Facility Worksheet (https://www.cdc.gov/nchs/data/dvs/facility-worksheet-2016.pdf)
+    * U.S. Standard Certificate of Live Birth (http://www.cdc.gov/nchs/data/dvs/birth11-03final-ACC.pdf)
+    * https:/www.cdc.gov/nchs/data/dvs/FDEATH11-03finalACC.pdf825
+    * Mother’s Worksheet for Child’s Birth Certificate
+    * Patient’s worksheet for the report of fetal death
 
 ### XX.4.2 Use Cases
 
-#### XX.4.2.1 Use Case \#1: simple name
+#### XX.4.2.1 Use Case #1: Forms Data Capture with Messaging
 
-One or two sentence simple description of this particular use
-case.
+The Forms Data Capture with Messaging use case uses Retrieve Form for Data Capture (RFD) to present Facilities Worksheet for pre-population, and the Form Receiver system transforms the
+information into a BFDRFeed [QRPH-37] message to transmit the information to Public Health EBRS.
 
-Note that Section XX.4.2.1 repeats in its entirety for additional use
-cases (replicate as Section XX.4.2.2, XX.4.2.3, etc.).
+##### XX.4.2.1.1 Forms Data Capture with Messaging Use Case Description
 
-##### XX.4.2.1.1 simple name Use Case Description
+When the delivery has been documented in the system, a Labor and Delivery Summary document (LDS, LDS-VR) is created with Vital Record Birth and Fetal Death Reporting Content requirements. This summary document is provided as pre-population data to a public health IHE ITI Retrieve Form for Data Capture (RFD) Form Manager. The RFD Form Receiver provides the content to the EBRS by way of a transform to the corresponding BFDRFeed [QRPH-37] message.
 
-Describe the key use cases addressed by the profile. Limit to a
-maximum of one page of text or consider an appendix.
+##### XX.4.2.1.2 Forms Data Capture with Messaging Process Flow
 
-##### XX.4.2.1.2 simple name Process Flow
+The process flow of this use case is defined by ITI RFD. Please refer to ITI TF-1: 17 for a description of the process flow for RFD. The Form Filler may be implemented by the birthing
+facility or by the child’s clinician in instances of home birth etc. The process flow for the BFDR-E is described below.
 
-Diagram and describe the process flow(s) covered by this profile in
-order to satisfy the use cases. Demonstrate how the profile transactions
-are combined/sequenced. To provide context and demonstrate how the
-profile interacts with other profiles, feel free to include transactions
-and events that are “external” to this profile (using appropriate
-notation.)
+The provider EMR presents the Facilities Worksheet providing an LDS or LDS-VR document for Pre-population by the Form Manager. The birth information specialist completes the form, verifies the accuracy of all information, and submits the form. The birth information specialist may also interview the mother for completion of the mother’s information to complete the reporting for the birth or fetal death. The Form Receiver Message Exporter transforms the information from the form into an HL7 BFDRFeed [QRPH-37] message and transmits that message to the EBRS system using the BFDRFeed [QRPH-37] transaction using the provider to jurisdiction reporting options for Report Jurisdiction Fetal Death. The National Statistics Agency returns coded cause of fetal death and Coded Race / Ethnicity Option for the fetal death to the jurisdiction EBRS. Due to paper jam damage of the printed official certificate that bears the death report number, the jurisdictional vital records office sends a Void Certificate Reporting message to the national statistics agency to void the submission. The fetal death registration will subsequently be transmitted with a new fetal death report number using the same transaction series between the originating jurisdictional vital records office and the National Statistics Agency.
 
-The set of process flows will typically be exemplary, not exhaustive
-(i.e., it will address all the use cases, but will not show all possible
-combinations of actors, or all possible sequencing of transactions).
-
-If there are detailed behavioral rules that apply to a specific process
-flow or multiple process flows, an appendix may be added as needed.
-
-The roles at the top of the swimlane diagram should correspond to
-actor names, include the profile acronym:actor name if referencing an
-actor from a different profile.
-
-Modify the following “Swimlane Diagram”.
+**TODO**Modify the following “Swimlane Diagram”.
 
 <figure>
 {%include usecase1-processflow.svg%}
@@ -430,140 +326,55 @@ Modify the following “Swimlane Diagram”.
 </figure>
 <br clear="all">
 
-If process flow “swimlane” diagrams require additional explanation
-to clarify conditional flows, or flow variations need to be described
-where alternate systems may be playing different actor roles, document
-those conditional flows here.
-
-Delete the material below if this is a workflow or transport
-profile. Delete the material above if this profile is a content module
-only profile.
-
 **Pre-conditions**:
 
-Very briefly (typically one sentence) describe the conditions or
-timing when this content module would be used.
+A delivery has been documented in the EMR system.
 
 **Main Flow**:
 
-Typically in an enumerated list, describe the clinical workflow
-when, where, and how this content module would be used.
+This flow captures the EBRS information using forms provided by public health and transmits the data that is captured to public health using HL7 Messaging (BFDRFeed [QRPH-37]).
 
 **Post-conditions:**
 
-Very briefly (typically one sentence) describe the state of the
-clinical scenario after this content module has been created including
-examples of potential next steps.
+The EBRS has received the data.
 
 <a name="security-considerations"> </a>
 
-## XX.5 ToDo Security Considerations
+## XX.5 BFDR-E Security Considerations
+BFDR-E includes clinical content related to the information subject. As such, it is anticipated that the transfers of Personal Health Information (PHI) will be protected. The IHE ITI Audit Trail and Node Authentication (ATNA) Profile SHOULD be implemented by all of the actors involved in the IHE transactions specified in this profile to protect node-to-node communication
+and to produce an audit trail of the PHI related actions when they exchange messages, though other private security mechanisms MAY be used to secure content within enterprise managed
+systems. Details regarding ATNA logging will be further described in Volume 2. 
+
+The content of the form also results in a legal document, and the Form Manager MAY include a digital signature using ITI Document Digital Signature (DSG) Profile to assure that the form
+content submitted cannot be changed.
+
+For security purposes, when sending information specifically to vital records Electronic Registration Systems, systems will also need to know the identity of the user and the location to
+identify the data source. In this case, the Cross-Enterprise User Assertion (XUA) Profile MAY be utilized to support this implementation.
 
 See ITI TF-2x: [Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
 
-The following is instructions to the editor and this text is not to be included in a publication.
-The material initially from [RFC 3552 "Security Considerations Guidelines" July 2003](https://tools.ietf.org/html/rfc3552).
-
-This section should address downstream design considerations, specifically for: Privacy, Security, and Safety. These might need to be individual header sections if they are significant or need to be referenced.
-
-The editor needs to understand Security and Privacy fundamentals.
-General [Security and Privacy guidance](http://hl7.org/fhir/secpriv-module.html) is provided in the FHIR Specification. 
-The FHIR core specification should be leveraged where possible to inform the reader of your specification.
-
-IHE FHIR based profiles should reference the [ITI Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) section 8 Mobile Security and Privacy Considerations base when appropriate.
-
-IHE Document Content profiles can reference the security and privacy provided by the Document Sharing infrastructure as directly grouped or possibly to be grouped.
-
-   While it is not a requirement that any given specification or system be
-   immune to all forms of attack, it is still necessary for authors of specifications to
-   consider as many forms as possible.  Part of the purpose of the
-   Security and Privacy Considerations section is to explain what attacks have been
-   considered and what countermeasures can be applied to defend against them.
-
-   There should be a clear description of the kinds of threats on the
-   described specification.  This should be approached as an
-   effort to perform "due diligence" in describing all known or
-   foreseeable risks and threats to potential implementers and users.
-
-Authors MUST describe:
-
-* which attacks have been considered and addressed in the specification
-* which attacks have been considered but not addressed in the specification
-* what could be done in system design, system deployment, or user training
-
-   At least the following forms of attack MUST be considered:
-   eavesdropping, replay, message insertion, deletion, modification, and
-   man-in-the-middle.  Potential denial of service attacks MUST be
-   identified as well.  If the specification incorporates cryptographic
-   protection mechanisms, it should be clearly indicated which portions
-   of the data are protected and what the protections are (i.e.,
-   integrity only, confidentiality, and/or endpoint authentication,
-   etc.).  Some indication should also be given to what sorts of attacks
-   the cryptographic protection is susceptible.  Data which should be
-   held secret (keying material, random seeds, etc.) should be clearly
-   labeled.
-
-   If the specification involves authentication, particularly user-host
-   authentication, the security of the authentication method MUST be
-   clearly specified.  That is, authors MUST document the assumptions
-   that the security of this authentication method is predicated upon.
-
-   The threat environment addressed by the Security and Privacy Considerations
-   section MUST at a minimum include deployment across the global
-   Internet across multiple administrative boundaries without assuming
-   that firewalls are in place, even if only to provide justification
-   for why such consideration is out of scope for the protocol.  It is
-   not acceptable to only discuss threats applicable to LANs and ignore
-   the broader threat environment.  In
-   some cases, there might be an Applicability Statement discouraging
-   use of a technology or protocol in a particular environment.
-   Nonetheless, the security issues of broader deployment should be
-   discussed in the document.
-
-   There should be a clear description of the residual risk to the user
-   or operator of that specification after threat mitigation has been
-   deployed.  Such risks might arise from compromise in a related
-   specification (e.g., IPsec is useless if key management has been
-   compromised), from incorrect implementation, compromise of the
-   security technology used for risk reduction (e.g., a cipher with a
-   40-bit key), or there might be risks that are not addressed by the
-   specification (e.g., denial of service attacks on an
-   underlying link protocol).  Particular care should be taken in
-   situations where the compromise of a single system would compromise
-   an entire protocol.  For instance, in general specification designers
-   assume that end-systems are inviolate and don't worry about physical
-   attack.  However, in cases (such as a certificate authority) where
-   compromise of a single system could lead to widespread compromises,
-   it is appropriate to consider systems and physical security as well.
-
-   There should also be some discussion of potential security risks
-   arising from potential misapplications of the specification or technology
-   described in the specification.  
-  
-This section also include specific considerations regarding Digital Signatures, Provenance, Audit Logging, and De-Identification.
-
-Where audit logging is specified, a StructureDefinition profile(s) should be included, and Examples of those logs might be included.
 
 <a name="other-grouping"> </a>
 
-## XX.6 ToDo Cross-Profile Considerations
+## XX.6 BFDR-E Cross-Profile Considerations
 
-This section is informative, not normative. It is intended to put
-this profile in context with other profiles. Any required groupings
-should have already been described above. Brief descriptions can go
-directly into this section; lengthy descriptions should go into an
-appendix. Examples of this material include ITI Cross Community Access
-(XCA) Grouping Rules (Section 18.2.3), the Radiology associated profiles
-listed at wiki.ihe.net, or ITI Volume 1 Appendix E “Cross Profile
-Considerations”, and the “See Also” sections Radiology Profile
-descriptions on the wiki such as
-<http://wiki.ihe.net/index.php/Scheduled_Workflow#See_Also>. If this
-section is left blank, add “Not applicable.”
+The following informative narrative is offered as implementation guidance.
 
-Consider using a format such as the following:
+### XX.6.1 mRFD – Mobile Retrieve Form for Data Capture
 
-other profile acronym - other profile name
+The BFDRQuery[QRPH-46] transaction may be used with Mobile Retrieve form for Data Capture as an alternative for form pre-population. To accomplish this, the Data Consumer should be grouped with the Form Manager of mRFD, and the Data Responder should be grouped with the Form Filler of mRFD.
 
-A other profile actor name in other profile name might
-be grouped with a this profile actor name to describe
-benefit/what is accomplished by grouping.
+### XX.6.2 XD*– Cross Enterprise Document Sharing.b, Cross Enterprise Document Media Interchange, or Cross Enterprise Document Reliable Interchange
+
+The use of the IHE XD* family of transactions is encouraged to support standards-based interoperability between systems acting as Content Creator and Content Consumer. The grouping of Content Creator and Content Consumer Actors with ITI XD* Actors is defined in the PCC Technical Framework (PCC TF-1:3.7.1). Below is a summary of recommended IHE transport transactions that MAY be utilized by systems playing the roles of Content Creator or Content Consumer to support the use cases defined in this profile:
+    * A Document Source in XDS.b, a Portable Media Creator in XDM, or a Document Source in XDR might be grouped with the BFDR-E Content Creator. A Document Consumer in XDS.b, a Portable Media Importer in XDM, or a Document Recipient in XDR might be grouped with the BFDR-E Content Consumer. A registry/repository-based infrastructure is defined by the IHE Cross Enterprise Document Sharing (XDS.b) that includes profile support that can be leveraged to facilitate retrieval of public health related information from a document sharing infrastructure: Multi-Patient Query (MPQ), Document Metadata Subscription (DSUB).
+    * A media-based infrastructure is defined by the IHE Cross Enterprise Document Media Interchange (XDM) Profile. A Portable Media Creator in XDM might be grouped with the BFDR-E Content Creator. A Portable Media Importer in XDM might be grouped with the BFDR-E Content Consumer.
+    * A reliable messaging-based infrastructure is defined by the IHE Cross Enterprise Document Reliable Interchange (XDR) Profile. A Document Source in XDR might be grouped with the BFDR-E Content Creator. A Document Recipient in XDR might be grouped with the BFDR-E Content Consumer.
+
+### XX.6.3 Sharing Value Sets (SVS)
+
+Actors in the BFDR-E Profile may support the Sharing Value Sets (SVS) Profile in order to use a common uniform managed vocabulary for dynamic management of form mapping rules.
+
+## XX.7 BFDR-E Data Elements
+
+This profile defines specific data element content. These data elements are used to create the BFDR Provider Live Birth Report FHIR Document or the BFDR Provider Fetal Death Report FHIR Document, generate the HL7 BFDRFeed [QRPH-37] message, or populate a form defined to gather the required structured data, such as the US BFDR Form. That set of data elements in the form are identified and defined in Appendix B.

@@ -2,12 +2,12 @@
 # ───────────────────────────────────────────────────
 # the id should be lowercase made up of "ihe." + {domain acronym} + "." + {profile acronym/short-name}
 # e.g. ihe.iti.mhds, or ihe.iti.basicaudit
-id: ihe.domain.profile
-canonical: https://profiles.ihe.net/Domain/Profile
+id: ihe.QRPH.BFDRE
+canonical: https://profiles.ihe.net/QRPH/BFDRE
 version: 0.0.1-current
-name: IHE_Domain_Profile
-title: "spelled out name of the IHE Profile"
-description: put the short description of the profile here. it should explain what problem is being solved
+name: IHE_QRPH_BFDRE
+title: "Birth and Fetal Death Reporting-Enhanced"
+description: The IHE Birth and Fetal Death Reporting Extended (BFDR-E) profile defines the mechanism to capture the information required for reporting to vital records. The BFDR-E profile provides the mapping and data capture rules to collect information from the IHE PCC Labor and Delivery Summary using the forms data capture. However, once this information is captured, there is no standard content document or transactional message specified by the BFDR profile to communicate this information to a Vital Records system. This results in limitations in deployment approaches. The recipient of the data must process the custom form data. The Vital Records systems may benefit from the HL7 V2.5.1 Birth and Fetal Death Reporting transaction specification and the HL7 CDA Birth and Fetal Death Reporting document specification to standardize the data they receive. 
 releaseLabel: ci-build
 #releaseLabel: ballot
 #releaseLabel: trial-use
@@ -16,14 +16,14 @@ releaseLabel: ci-build
 status: draft
 publisher:
   ## Find your domain contact on the https://www.ihe.net/ihe_domains page
-  - name: IHE IT Infrastructure Technical Committee
-  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
-  - email: iti@ihe.net
+  - name: IHE Quality, Research and Public Health Committee
+  - url: https://www.ihe.net/ihe_domains/quality_research_and_public_health/
+  - email: qrph@ihe.net
 contact:
-  - name: IHE IT Infrastructure Technical Committee
+  - name: IHE Quality, Research and Public Health Committee
     telecom:
       - system: email
-        value: iti@ihe.net
+        value: qrph@ihe.net
 license:  CC-BY-4.0
 fhirVersion: 4.0.1
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
@@ -57,13 +57,13 @@ resources:
 pages:
 # itemize here each narrative page. Include assigned section numbers when appropriate. The order they appear here is the order they will appear in the TOC and on the next/prev navigation.
   index.md:
-    title: ToDo Home
+    title: Birth and Fetal Death Reporting-Enhanced Home
     generation: markdown
   volume-1.md:
-    title: 1:XX ToDo Volume 1
+    title: 1:XX Birth and Fetal Death Reporting-Enhanced Volume 1
     generation: markdown
-  domain-YY.md:
-    title: 2:3.YY Transaction one [Domain-YY]
+  QRPH-46.md:
+    title: 2:3.46 Transaction one [QRPH-46]
     generation: markdown
   domain-ZZ.md:
     title: 3:?.ZZ Content one [Domain-ZZ]
@@ -92,7 +92,7 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 2:
-    "Transaction one [Domain-YY]": domain-YY.html
+    "Transaction one [QRPH-46]": QRPH-46.html
   Volume 3:
     "Content one [Domain-ZZ]": domain-ZZ.html
   Artifacts: artifacts.html

@@ -1,7 +1,9 @@
 
 **This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out these sections can be found in the included [Supplement Template](https://github.com/IHE/supplement-template/blob/master/suppl_template.md). This supplement template should not be included in your github repo or publication. It is included here for easy reference.**
 
-**TODO: Write your executive overview here. Usually a one paragraph explanation of what problem this implementation guide solves.**
+**Overview**
+Vital Records birth certificates and fetal death reports include important demographic, medical and key information about the antepartum period, the labor and delivery process and the newborn/fetal death. Much of the medical and health information collected for the birth certificate and fetal death report can be pre-populated with information already available in the
+Electronic Health Record (EMR). A responsible Health Care Provider (HCP) or designated representative must review and complete the information to ensure data quality for vital registration purposes. These data may then be used by public health agencies to track maternal and infant health to target interventions for at risk populations. The national statistics agencies have a long and enduring history that serves to provide essential data on births and deaths. Within the United States, for instance, this is the oldest and most successful example of inter-governmental data sharing in Public Health. Currently, these data typically are gathered by hospital personnel from the hospital’s medical records using paper worksheets. The process of capturing Vital Records information manually is duplicative, labor-intensive, costly, and can be error prone. As a result, the timeliness and quality of these data are adversely affected.
 
 <div markdown="1" class="stu-note">
 
