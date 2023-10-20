@@ -5,7 +5,7 @@ Alias: $Extension-partial-date-vr = http://hl7.org/fhir/us/vr-common-library/Str
 
 Profile: IHERelatedPersonParentVitalRecords
 Parent: RelatedPerson
-Id: IHE-RelatedPerson-parent-vr
+Id: RelatedPerson-parent-ihe-vr
 Title: "Related Person - Parent - Vital Records"
 Description: "This RelatedPerson profile contains constraints common to the Mother and Father profiles."
 * extension contains
@@ -25,7 +25,7 @@ Description: "This RelatedPerson profile contains constraints common to the Moth
 * identifier[NI] ^short = "National Identifier if available and appropriate to send"
 * identifier[NI].type 1.. MS
 * identifier[NI].type = $v2-0203#NI
-* patient only Reference(IHE-Patient-child-vr or IHE-Patient-decedent-fetus-vr)
+* patient only Reference(Patient-child-ihe-vr or Patient-decedent-fetus-ihe-vr)
 * relationship 1..
 * name 1..
 * birthDate MS
@@ -36,17 +36,17 @@ Description: "This RelatedPerson profile contains constraints common to the Moth
 Mapping: rim
 Id: rim
 Title: "RIM Mapping"
-Source: RelatedPersonParentVitalRecords
+Source: IHERelatedPersonParentVitalRecords
 Target: "http://hl7.org/v3"
 
 Mapping: w5
 Id: w5
 Title: "FiveWs Pattern Mapping"
-Source: RelatedPersonParentVitalRecords
+Source: IHERelatedPersonParentVitalRecords
 Target: "http://hl7.org/fhir/fivews"
 
 Mapping: v2
 Id: v2
 Title: "HL7 v2 Mapping"
-Source: RelatedPersonParentVitalRecords
+Source: IHERelatedPersonParentVitalRecords
 Target: "http://hl7.org/v2"

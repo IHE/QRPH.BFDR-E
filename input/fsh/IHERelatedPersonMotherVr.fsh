@@ -2,7 +2,7 @@ Alias: $ValueSet-mother-relationship-vr = http://hl7.org/fhir/us/vr-common-libra
 
 Profile: IHERelatedPersonMotherVitalRecords
 Parent: IHERelatedPersonParent
-Id: IHE-RelatedPerson-mother-vr
+Id: RelatedPerson-mother-ihe-vr
 Title: "RelatedPerson - Mother - Vital Records"
 Description: "This RelatedPerson profile represents the mother of the report subject. Different individuals may play different roles as the mother (e.g., biological mother, adoptive mother, etc.)."
 
@@ -15,17 +15,17 @@ Description: "This RelatedPerson profile represents the mother of the report sub
 Mapping: rim
 Id: rim
 Title: "RIM Mapping"
-Source: RelatedPersonMotherVitalRecords
+Source: IHERelatedPersonMotherVitalRecords
 Target: "http://hl7.org/v3"
 
 Mapping: w5
 Id: w5
 Title: "FiveWs Pattern Mapping"
-Source: RelatedPersonMotherVitalRecords
+Source: IHERelatedPersonMotherVitalRecords
 Target: "http://hl7.org/fhir/fivews"
 
 Mapping: v2
 Id: v2
 Title: "HL7 v2 Mapping"
-Source: RelatedPersonMotherVitalRecords
+Source: IHERelatedPersonMotherVitalRecords
 Target: "http://hl7.org/v2"

@@ -3,7 +3,7 @@ Alias: $v3-RoleCode = http://terminology.hl7.org/CodeSystem/v3-RoleCode
 
 Profile: IHERelatedPersonMotherGestationalVitalRecords
 Parent: IHE-RelatedPerson-mother-vr
-Id: IHE-RelatedPerson-mother-gestational-vr
+Id: RelatedPerson-mother-gestational-ihe-vr
 Title: "RelatedPerson - Mother Gestational - Vital Records"
 Description: "This RelatedPerson profile represents the woman who gave birth to or delivered the infant. The RelatedPerson structure is required in order to link the mother to the newborn or fetus."
 
@@ -15,17 +15,17 @@ Description: "This RelatedPerson profile represents the woman who gave birth to 
 Mapping: rim
 Id: rim
 Title: "RIM Mapping"
-Source: RelatedPersonMotherGestationalVitalRecords
+Source: IHERelatedPersonMotherGestationalVitalRecords
 Target: "http://hl7.org/v3"
 
 Mapping: w5
 Id: w5
 Title: "FiveWs Pattern Mapping"
-Source: RelatedPersonMotherGestationalVitalRecords
+Source: IHERelatedPersonMotherGestationalVitalRecords
 Target: "http://hl7.org/fhir/fivews"
 
 Mapping: v2
 Id: v2
 Title: "HL7 v2 Mapping"
-Source: RelatedPersonMotherGestationalVitalRecords
+Source: IHERelatedPersonMotherGestationalVitalRecords
 Target: "http://hl7.org/v2"

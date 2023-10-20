@@ -1,0 +1,17 @@
+Profile: IHEObservationNIRequestedForChild
+Parent: Observation
+Id: Observation-NI-requested-for-child-ihe
+Title: "Observation - Social Security Number Requested For Child"
+Description: "This Observation profile represents whether or not a social security number has been requested for the child. If a social security number was requested, set valueBoolean=true and enter the time requested in the effectiveDateTime data element."
+
+* code 1..1 MS
+* code = $loinc#87295-2
+* code ^short = "Social Security Number was requested"
+* subject 1.. MS
+* subject only Reference(Patient-child-ihe-vr)
+* effective[x] 0..1 MS
+* effective[x] only dateTime
+* effective[x] ^short = "Date/time social security number requested"
+* value[x] 1..1 MS
+* value[x] only boolean
+* value[x] ^short = "Social security number requested for child?"

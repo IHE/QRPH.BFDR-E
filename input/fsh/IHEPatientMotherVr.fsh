@@ -5,7 +5,7 @@ Alias: $Extension-within-city-limits-indicator-vr = http://hl7.org/fhir/us/vr-co
 
 Profile: IHEPatientMotherVitalRecords
 Parent: Patient
-Id: IHE-Patient-mother-vr
+Id: Patient-mother-ihe-vr
 Title: "Patient - Mother - Vital Records"
 Description: "This Patient profile represents the woman who gave birth to, or delivered the infant."
 * extension ^slicing.discriminator.type = #value
@@ -63,7 +63,7 @@ Description: "This Patient profile represents the woman who gave birth to, or de
 * link ^slicing.rules = #open
 * link contains mother 0..1 MS
 * link[mother] ^short = "Link to the birth mother's RelatedPerson record"
-* link[mother].other only Reference(IHE-RelatedPerson-mother-vr)
+* link[mother].other only Reference(RelatedPerson-mother-ihe-vr)
 * link[mother].other MS
 * link[mother].other ^type.extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy"
 * link[mother].other ^type.extension.valueBoolean = false
@@ -73,29 +73,29 @@ Description: "This Patient profile represents the woman who gave birth to, or de
 Mapping: rim
 Id: rim
 Title: "RIM Mapping"
-Source: PatientMotherVitalRecords
+Source: IHEPatientMotherVitalRecords
 Target: "http://hl7.org/v3"
 
 Mapping: cda
 Id: cda
 Title: "CDA (R2)"
-Source: PatientMotherVitalRecords
+Source: IHEPatientMotherVitalRecords
 Target: "http://hl7.org/v3/cda"
 
 Mapping: w5
 Id: w5
 Title: "FiveWs Pattern Mapping"
-Source: PatientMotherVitalRecords
+Source: IHEPatientMotherVitalRecords
 Target: "http://hl7.org/fhir/fivews"
 
 Mapping: v2
 Id: v2
 Title: "HL7 v2 Mapping"
-Source: PatientMotherVitalRecords
+Source: IHEPatientMotherVitalRecords
 Target: "http://hl7.org/v2"
 
 Mapping: loinc
 Id: loinc
 Title: "LOINC code for the element"
-Source: PatientMotherVitalRecords
+Source: IHEPatientMotherVitalRecords
 Target: "http://loinc.org"

@@ -8,7 +8,7 @@ Alias: $patient-multipleBirthTotal = http://hl7.org/fhir/StructureDefinition/pat
 
 Profile: IHEPatientChildVitalRecords
 Parent: Patient
-Id: IHE-Patient-child-vr
+Id: Patient-child-ihe-vr
 Title: "Patient - Child - Vital Records"
 Description: "This Patient profile represents the subject patient (newborn/infant/child) for whom clinical data is included in the report."
 * extension ^slicing.discriminator.type = #value
@@ -63,29 +63,29 @@ Description: "This Patient profile represents the subject patient (newborn/infan
 Mapping: rim
 Id: rim
 Title: "RIM Mapping"
-Source: PatientChildVitalRecords
+Source: IHEPatientChildVitalRecords
 Target: "http://hl7.org/v3"
 
 Mapping: cda
 Id: cda
 Title: "CDA (R2)"
-Source: PatientChildVitalRecords
+Source: IHEPatientChildVitalRecords
 Target: "http://hl7.org/v3/cda"
 
 Mapping: w5
 Id: w5
 Title: "FiveWs Pattern Mapping"
-Source: PatientChildVitalRecords
+Source: IHEPatientChildVitalRecords
 Target: "http://hl7.org/fhir/fivews"
 
 Mapping: v2
 Id: v2
 Title: "HL7 v2 Mapping"
-Source: PatientChildVitalRecords
+Source: IHEPatientChildVitalRecords
 Target: "http://hl7.org/v2"
 
 Mapping: loinc
 Id: loinc
 Title: "LOINC code for the element"
-Source: PatientChildVitalRecords
+Source: IHEPatientChildVitalRecords
 Target: "http://loinc.org"
