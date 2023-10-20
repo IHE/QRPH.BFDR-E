@@ -1,6 +1,6 @@
-Profile: ObservationNoneOfSpecifiedCharacteristicsOfLaborAndDelivery
+Profile: IHEObservationNoneOfSpecifiedCharacteristicsOfLaborAndDelivery
 Parent: Observation
-Id: Observation-none-of-specified-characteristics-labor-delivery
+Id: Observation-none-of-specified-characteristics-labor-delivery-ihe
 Title: "Observation - None Of Specified Characteristics of Labor and Delivery"
 Description: "This Observation profile indicates that none of the specified characteristics of labor and delivery were present."
 

@@ -117,10 +117,10 @@ Description: "This Composition profile defines constraints to address the use ca
 * section[motherPrenatal].entry[numberOtherOutcomes] only Reference(Observation-number-other-pregnancy-outcomes-ihe-vr)
 * section[motherPrenatal].entry[numberOtherOutcomes] ^short = "Number of other pregnancy outcomes"
 * section[motherPrenatal].entry[numberOtherOutcomes] ^definition = "The pregnancy history of the mother with respect to other pregnancy outcomes (included pregnancy losses of any gestational age, e.g., spontaneous or induced losses or ectopic pregnancies)."
-* section[motherPrenatal].entry[dateLastOtherOutcome] only Reference(Observation-date-of-last-other-pregnancy-outcome)
+* section[motherPrenatal].entry[dateLastOtherOutcome] only Reference(Observation-date-of-last-other-pregnancy-outcome-ihe)
 * section[motherPrenatal].entry[dateLastOtherOutcome] ^short = "Date of last other pregnancy outcome"
 * section[motherPrenatal].entry[dateLastOtherOutcome] ^definition = "The pregnancy history of the mother with respect to other pregnancy outcomes (included pregnancy losses of any gestational age, e.g., spontaneous or induced losses or ectopic pregnancies)."
-* section[motherPrenatal].entry[principalSourceOfPayment] only Reference($Coverage-principal-payer-for-delivery)
+* section[motherPrenatal].entry[principalSourceOfPayment] only Reference(Coverage-principal-payer-for-delivery)
 * section[motherPrenatal].entry[principalSourceOfPayment] ^short = "Principal source of payment for this delivery"
 * section[motherPrenatal].entry[principalSourceOfPayment] ^definition = "The principal payer for this delivery"
 * section[motherPrenatal].entry[mothersWeightAtDelivery] only Reference(Observation-mother-delivery-weight-ihe-vr)
@@ -167,7 +167,7 @@ Description: "This Composition profile defines constraints to address the use ca
 * section[medicalHealthInformation].entry[pregnancyRiskFactors] only Reference(Condition-prepregnancy-diabetes-ihe-vr or Condition-gestational-diabetes-ihe-vr or Condition-prepregnancy-hypertension-ihe-vr or Condition-gestational-hypertension-ihe-vr or Condition-eclampsia-hypertension-ihe-vr or Observation-previous-preterm-birth-ihe-vr or Procedure-infertility-treatment-ihe-vr or Procedure-artificial-insemination-ihe-vr or Procedure-assisted-fertilization-ihe-vr or Observation-previous-cesarean-ihe-vr or Observation-none-of-specified-pregnancy-risk-factors-ihe-vr)
 * section[medicalHealthInformation].entry[pregnancyRiskFactors] ^short = "Risk factors in this pregnancy: the \"US Standard Mother's Worksheet for Child’s Birth Certificate\" should be the source of truth for the infertility treatment, artificial insemination, and assisted fertilization data elements."
 * section[medicalHealthInformation].entry[pregnancyRiskFactors] ^definition = "Selected medical risk factors of the mother during this pregnancy"
-* section[medicalHealthInformation].entry[numberPreviousCesareans] only Reference($Observation-number-previous-cesareans-ihe-vr)
+* section[medicalHealthInformation].entry[numberPreviousCesareans] only Reference(Observation-number-previous-cesareans-ihe-vr)
 * section[medicalHealthInformation].entry[numberPreviousCesareans] ^short = "If mother had a previous cesarean delivery, how many"
 * section[medicalHealthInformation].entry[numberPreviousCesareans] ^definition = "Number of previous cesarean deliveries."
 * section[medicalHealthInformation].entry[infectionsDuringPregnancy] only Reference(Condition-infection-present-during-pregnancy-ihe)
@@ -245,14 +245,14 @@ Description: "This Composition profile defines constraints to address the use ca
 * section[motherInformation].entry ^slicing.rules = #open
 * section[motherInformation].entry contains
     marriedDuringPregnancy 0..1 MS and
-    ssnRequestedForChild 0..1 MS and
+    nIRequestedForChild 0..1 MS and
     mothersEducation 0..1 MS
 * section[motherInformation].entry[marriedDuringPregnancy] only Reference(Observation-mother-married-during-pregnancy-ihe)
 * section[motherInformation].entry[marriedDuringPregnancy] ^short = "Mother married during pregnancy: the \"US Standard Mother's Worksheet for Child’s Birth Certificate\" should be the source of truth for this data element."
 * section[motherInformation].entry[marriedDuringPregnancy] ^definition = "Was mother married at conception, at the time of birth, or at any time between conception and giving birth?"
-* section[motherInformation].entry[ssnRequestedForChild] only Reference(Observation-ssn-requested-for-child-ihe)
-* section[motherInformation].entry[ssnRequestedForChild] ^short = "Was social security number requested for the child: the \"US Standard Mother's Worksheet for Child’s Birth Certificate\" should be the source of truth for this data element."
-* section[motherInformation].entry[ssnRequestedForChild] ^definition = "Was social security number requested for the child"
+* section[motherInformation].entry[nIRequestedForChild] only Reference(Observation-ni-requested-for-child-ihe)
+* section[motherInformation].entry[nIRequestedForChild] ^short = "Was social security number requested for the child: the \"US Standard Mother's Worksheet for Child’s Birth Certificate\" should be the source of truth for this data element."
+* section[motherInformation].entry[nIRequestedForChild] ^definition = "Was social security number requested for the child"
 * section[motherInformation].entry[mothersEducation] only Reference(Observation-parent-education-level-ihe-vr)
 * section[motherInformation].entry[mothersEducation] ^short = "Mother's education: the US Standard Mother's Worksheet for Child’s Birth Certificate should be the source of truth for this data element."
 * section[motherInformation].entry[mothersEducation] ^definition = "Mother's education"

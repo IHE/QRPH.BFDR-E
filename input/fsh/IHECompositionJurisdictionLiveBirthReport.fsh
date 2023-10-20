@@ -120,7 +120,7 @@ Description: "This Composition profile contains information of a live birth and 
 * section[motherPrenatal].entry[dateLastOtherOutcome] only Reference(Observation-date-of-last-other-pregnancy-outcome-ihe)
 * section[motherPrenatal].entry[dateLastOtherOutcome] ^short = "Date of last other pregnancy outcome"
 * section[motherPrenatal].entry[dateLastOtherOutcome] ^definition = "The pregnancy history of the mother with respect to other pregnancy outcomes (included pregnancy losses of any gestational age, e.g., spontaneous or induced losses or ectopic pregnancies)."
-* section[motherPrenatal].entry[principalSourceOfPayment] only Reference(Coverage-principal-payer-for-delivery-ihe)
+* section[motherPrenatal].entry[principalSourceOfPayment] only Reference(Coverage-principal-payer-for-delivery)
 * section[motherPrenatal].entry[principalSourceOfPayment] ^short = "Principal source of payment for this delivery"
 * section[motherPrenatal].entry[principalSourceOfPayment] ^definition = "The principal payer for this delivery"
 * section[motherPrenatal].entry[mothersWeightAtDelivery] only Reference(Observation-mother-delivery-weight-ihe-vr)

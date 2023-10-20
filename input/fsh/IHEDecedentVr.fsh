@@ -39,38 +39,3 @@ Title: "VRDR Decedent"
 * contact.relationship from $ViewValueSet.action_3 (required)
 * contact.relationship ^binding.description = "PHVS_RelatedPersonRelationshipType_NCHS"
 
-Mapping: argonaut-dq-dstu2
-Id: argonaut-dq-dstu2
-Title: "Argonaut-DQ-DSTU2"
-Source: IHEDecedentVr
-Target: "http://unknown.org/Argonaut-DQ-DSTU2"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEDecedentVr
-Target: "http://hl7.org/v3"
-
-Mapping: cda
-Id: cda
-Title: "CDA (R2)"
-Source: IHEDecedentVr
-Target: "http://hl7.org/v3/cda"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEDecedentVr
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEDecedentVr
-Target: "http://hl7.org/v2"
-
-Mapping: loinc
-Id: loinc
-Title: "LOINC code for the element"
-Source: IHEDecedentVr
-Target: "http://loinc.org"
