@@ -59,26 +59,3 @@ Description: "This Encounter profile represents the child's birth encounter."
 * partOf ^short = "Reference to the mother's maternity encounter"
 * partOf ^definition = "Reference to the mother's maternity encounter"
 
-Mapping: workflow
-Id: workflow
-Title: "Workflow Pattern"
-Source: IHEEncounterBirth
-Target: "http://hl7.org/fhir/workflow"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEEncounterBirth
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEEncounterBirth
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEEncounterBirth
-Target: "http://hl7.org/v2"
