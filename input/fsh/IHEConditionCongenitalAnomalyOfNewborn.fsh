@@ -29,39 +29,3 @@ Description: "This Condition profile represents information on whether the infan
 * evidence[karyotypeConfirmedAbmormal].code 1..1 MS
 * evidence[karyotypeConfirmedAbmormal].code = $sct#442124003
 * evidence[karyotypeConfirmedAbmormal].code ^short = "Suspected chromosomal disorder or Down Syndrome: Karyotype confirmed"
-
-Mapping: workflow
-Id: workflow
-Title: "Workflow Pattern"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://hl7.org/fhir/workflow"
-
-Mapping: sct-concept
-Id: sct-concept
-Title: "SNOMED CT Concept Domain Binding"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://snomed.info/conceptdomain"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://hl7.org/v2"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: sct-attr
-Id: sct-attr
-Title: "SNOMED CT Attribute Binding"
-Source: IHEConditionCongenitalAnomalyOfNewborn
-Target: "http://snomed.org/attributebinding"

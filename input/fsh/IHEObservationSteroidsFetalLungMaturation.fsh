@@ -9,7 +9,7 @@ Description: "This Observation profile indicates a characteristic of labor of ad
 * subject 1..
 * subject only Reference(Patient-mother-ihe-vr)
 * focus 1..1
-* focus only Reference($Patient-child-ihe-vr)
+* focus only Reference(Patient-child-ihe-vr)
 * value[x] 1..
 * value[x] only CodeableConcept
 * value[x] = $sct#434611000124106

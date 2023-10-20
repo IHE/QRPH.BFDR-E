@@ -13,26 +13,3 @@ Description: "This Practitioner profile represents a practitioner who is involve
 * qualification.code ^short = "List of titles"
 * qualification.code ^binding.description = "Live Birth/Fetal Death Practitioner title"
 
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEPractitionerVitalRecords
-Target: "http://hl7.org/v2"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEPractitionerVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: servd
-Id: servd
-Title: "ServD"
-Source: IHEPractitionerVitalRecords
-Target: "http://www.omg.org/spec/ServD/1.0/"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEPractitionerVitalRecords
-Target: "http://hl7.org/fhir/fivews"

@@ -17,7 +17,7 @@ Where number of packs per day are provided, calculate number of cigarettes per d
 * code ^short = "This value set contains codes to determine the number of cigarettes smoked in specific periods before and during pregnancy."
 * code ^binding.description = "CigaretteSmokingBeforeAndDuringPregnancy"
 * subject 1.. MS
-* subject only Reference($Patient-mother-vr)
+* subject only Reference(Patient-mother-ihe-vr)
 * focus 1..1 MS
 * focus only Reference(Patient-child-ihe-vr or Patient-decedent-fetus-ihe-vr)
 * value[x] 1..1 MS

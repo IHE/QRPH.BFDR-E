@@ -1,4 +1,4 @@
-Alias: SCT = http://snomed.info/sct
+Alias: sct = http://snomed.info/sct
 Alias: UCUM = http://unitsofmeasure.org
 Alias: LOINC = http://loinc.org
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203

@@ -8,7 +8,7 @@ Title: "Observation - Parent Education Level - Vital Records"
 Description: "This Observation profile represents the highest degree or level of schooling completed by the parent."
 
 * code MS
-* code from $ValueSet-education-level-person-vr (required)
+* code from $ValueSet-education-level-person-vr (preferred)
 * code ^short = "Persons for whom education level can be reported."
 * code ^binding.description = "EducationLevelPerson"
 * subject 1.. MS

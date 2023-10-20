@@ -47,32 +47,3 @@ Description: "This Patient profile represents a delivered fetus for which clinic
 * multipleBirth[x].extension contains $patient-multipleBirthTotal named multipleBirthTotal 0..1 MS
 * multipleBirth[x].extension[multipleBirthTotal] ^short = "Where a patient is a part of a multiple delivery, this is the total number of deliveries that occurred in this pregnancy."
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEPatientDecedentFetusVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: cda
-Id: cda
-Title: "CDA (R2)"
-Source: IHEPatientDecedentFetusVitalRecords
-Target: "http://hl7.org/v3/cda"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEPatientDecedentFetusVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEPatientDecedentFetusVitalRecords
-Target: "http://hl7.org/v2"
-
-Mapping: loinc
-Id: loinc
-Title: "LOINC code for the element"
-Source: IHEPatientDecedentFetusVitalRecords
-Target: "http://loinc.org"

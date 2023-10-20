@@ -10,20 +10,3 @@ Description: "This RelatedPerson profile represents the father of the subject (p
 * relationship ^short = "Relationships describing the father's role relative to the subject."
 * relationship ^binding.description = "FatherRelationship"
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHERelatedPersonFatherVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHERelatedPersonFatherVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHERelatedPersonFatherVitalRecords
-Target: "http://hl7.org/v2"

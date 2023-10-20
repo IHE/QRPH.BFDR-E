@@ -33,20 +33,3 @@ Description: "This RelatedPerson profile contains constraints common to the Moth
 * birthDate.extension[partialDate] ^short = "Provides values of a partial date"
 * birthDate.extension[partialDate] ^definition = "Indicates reason for missing data on either the birthDate or the birthTime."
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHERelatedPersonParentVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHERelatedPersonParentVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHERelatedPersonParentVitalRecords
-Target: "http://hl7.org/v2"

@@ -17,39 +17,3 @@ Description: "This Condition profile represents another significant cause or con
 * code.text MS
 * code.text ^short = "Any further specification should be entered as free text to fully record the provider's view of the cause."
 * subject only Reference(Patient-decedent-fetus-ihe-vr)
-
-Mapping: workflow
-Id: workflow
-Title: "Workflow Pattern"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://hl7.org/fhir/workflow"
-
-Mapping: sct-concept
-Id: sct-concept
-Title: "SNOMED CT Concept Domain Binding"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://snomed.info/conceptdomain"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://hl7.org/v2"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: sct-attr
-Id: sct-attr
-Title: "SNOMED CT Attribute Binding"
-Source: IHEConditionFetalDeathOtherCauseOrCondition
-Target: "http://snomed.org/attributebinding"

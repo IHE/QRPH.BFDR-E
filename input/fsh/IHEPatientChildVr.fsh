@@ -60,32 +60,3 @@ Description: "This Patient profile represents the subject patient (newborn/infan
 * multipleBirth[x].extension[multipleBirthTotal] ^short = "Where a patient is a part of a multiple delivery, this is the total number of deliveries that occurred in this pregnancy."
 * multipleBirth[x].extension[multipleBirthTotal] ^definition = "Where a patient is a part of a multiple delivery, this is the total number of deliveries that occurred in this pregnancy."
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEPatientChildVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: cda
-Id: cda
-Title: "CDA (R2)"
-Source: IHEPatientChildVitalRecords
-Target: "http://hl7.org/v3/cda"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEPatientChildVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEPatientChildVitalRecords
-Target: "http://hl7.org/v2"
-
-Mapping: loinc
-Id: loinc
-Title: "LOINC code for the element"
-Source: IHEPatientChildVitalRecords
-Target: "http://loinc.org"

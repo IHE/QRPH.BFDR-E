@@ -18,18 +18,3 @@ Description: "This Observation profile represents the fetal presentation (orient
 * value[x] ^definition = "The presentation (orientation within the mother's womb) that a fetus may be in prior to delivery/birth."
 * value[x] ^binding.description = "Fetal Presentations (NCHS)"
 
-Mapping: live-birth-certificate
-Id: live-birth-certificate
-Title: "U.S. Standard Certificate of Live Birth (rev. 2003)"
-Description: "This table maps profile elements to U.S. Standard Certificate of Live Birth (rev. 2003)"
-Source: IHEObservationFetalPresentation
-Target: "https://www.cdc.gov/nchs/data/dvs/birth11-03final-ACC.pdf"
-* value[x] -> "46c. Fetal presentation at birth"
-
-Mapping: fetal-death-report
-Id: fetal-death-report
-Title: "U.S. Standard Report of Fetal Death (rev. 2003)"
-Description: "This table maps profile elements to  U.S. Standard Report of Fetal Death (rev. 2003)"
-Source: IHEObservationFetalPresentation
-Target: "https://www.cdc.gov/nchs/data/dvs/FDEATH11-03finalACC.pdf"
-* value[x] -> "38c. Fetal presentation at delivery"

@@ -12,20 +12,3 @@ Description: "This RelatedPerson profile represents the woman who gave birth to 
 * relationship ^short = "gestational mother"
 * relationship ^definition = "The player of the role is a female whose womb carries the fetus of the scoping entity (child)."
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHERelatedPersonMotherGestationalVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHERelatedPersonMotherGestationalVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHERelatedPersonMotherGestationalVitalRecords
-Target: "http://hl7.org/v2"

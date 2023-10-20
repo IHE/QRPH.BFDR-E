@@ -20,26 +20,3 @@ Description: "This Procedure profile records the certification of death by the c
 * performer.actor only Reference(Practitioner or Vrdr-ihe-certifier)
 * performer.actor MS
 
-Mapping: workflow
-Id: workflow
-Title: "Workflow Pattern"
-Source: IHEProcedureDeathCertificationVitalRecords
-Target: "http://hl7.org/fhir/workflow"
-
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEProcedureDeathCertificationVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEProcedureDeathCertificationVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEProcedureDeathCertificationVitalRecords
-Target: "http://hl7.org/v2"

@@ -70,32 +70,3 @@ Description: "This Patient profile represents the woman who gave birth to, or de
 * link[mother].type = #seealso
 * link[mother].type MS
 
-Mapping: rim
-Id: rim
-Title: "RIM Mapping"
-Source: IHEPatientMotherVitalRecords
-Target: "http://hl7.org/v3"
-
-Mapping: cda
-Id: cda
-Title: "CDA (R2)"
-Source: IHEPatientMotherVitalRecords
-Target: "http://hl7.org/v3/cda"
-
-Mapping: w5
-Id: w5
-Title: "FiveWs Pattern Mapping"
-Source: IHEPatientMotherVitalRecords
-Target: "http://hl7.org/fhir/fivews"
-
-Mapping: v2
-Id: v2
-Title: "HL7 v2 Mapping"
-Source: IHEPatientMotherVitalRecords
-Target: "http://hl7.org/v2"
-
-Mapping: loinc
-Id: loinc
-Title: "LOINC code for the element"
-Source: IHEPatientMotherVitalRecords
-Target: "http://loinc.org"
